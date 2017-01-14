@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  ansible:
+    container_name: ansible-server
+    image:  juniper/pyez-ansible
+    networks:
+      - default_network
+
+networks:
+  default_network:
+    driver: bridge
