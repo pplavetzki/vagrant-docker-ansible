@@ -7,11 +7,12 @@ Vagrant.configure("2") do |config|
   config.vm.define :ubuntu do |ubuntu|
     
     ubuntu.vm.hostname = :ubuntu
-    ubuntu.vm.box = 'parallels/ubuntu-14.04'
+    ubuntu.vm.box = 'ubuntu/trusty64'
 
-    ubuntu.vm.provider :parallels do |prl|
-      prl.cpus = 2
-      prl.memory = 1024 # works with 1024, 512 will need a swap file
+    ubuntu.vm.provider :virtualbox do |vb|
+      vb.gui = false
+      vb.cpus = 2
+      vb.memory = 2048 # works with 1024, 512 will need a swap file
     end
 
     #port = 4200
